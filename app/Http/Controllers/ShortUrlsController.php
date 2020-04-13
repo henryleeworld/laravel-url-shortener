@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
    
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use App\ShortUrls;
 
 class ShortUrlsController extends Controller
@@ -32,7 +33,7 @@ class ShortUrlsController extends Controller
         ]);
    
         $input['url'] = $request->url ;
-        $input['code'] = Hasher::generate();
+        $input['code'] = Str::random(9);
    
         ShortUrls::create($input);
   
