@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('short-url/generate', [ShortUrlsController::class, 'index']);
 Route::post('short-url/generate', [ShortUrlsController::class, 'store'])->name('short-url.generate.post');
 Route::get('short-url/{code}', [ShortUrlsController::class, 'redirectUrl'])->name('short-url.redirect');
