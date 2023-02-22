@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-   
+
+use App\Models\ShortUrls;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use App\Models\ShortUrls;
 
 class ShortUrlsController extends Controller
 {
@@ -18,7 +18,7 @@ class ShortUrlsController extends Controller
     {
         $shortUrls = ShortUrls::latest()->get();
    
-        return view('shortUrl', compact('shortUrls'));
+        return view('short-url', compact('shortUrls'));
     }
      
     /**
@@ -38,7 +38,7 @@ class ShortUrlsController extends Controller
         ShortUrls::create($input);
   
         return redirect('short-url/generate')
-             ->with('success', 'Shorten Link Generated Successfully!');
+             ->with('success', '短網址產生成功！');
     }
    
     /**
