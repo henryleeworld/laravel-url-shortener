@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>短網址產生器</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>{{ config('app.name') }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
    
 <div class="container">
-    <h4 class="font-weight-bold mb-3 text-success text-center">短網址產生器：請勿置入違法或有危險性的連結。</h4>
+    <h4 class="font-weight-bold mb-3 text-success text-center">{{ __('Short URL Generator: Do not insert illegal or dangerous links.') }}</h4>
     <div class="card">
       <div class="card-header">
         <form method="POST" action="{{ route('short-url.generate.post') }}">
             @csrf
             <div class="input-group mb-3">
-              <input type="text" name="url" class="form-control" placeholder="目標網址">
+              <input type="text" name="url" class="form-control" placeholder="{{ __('Destination URL') }}">
               <div class="input-group-append">
-                <button class="btn btn-success" type="submit">產生</button>
+                <button class="btn btn-success" type="submit">{{ __('Generate') }}</button>
               </div>
             </div>
         </form>
       </div>
-      <div class="card-body">
+      <div class="card-body table-responsive">
    
             @if (Session::has('success'))
                 <div class="alert alert-success">
@@ -31,9 +31,9 @@
             <table class="table table-bordered table-sm">
                 <thead>
                     <tr>
-                        <th>編號</th>
-                        <th>短網址</th>
-                        <th>目標網址</th>
+                        <th>{{ __('ID') }}</th>
+                        <th>{{ __('Short URL') }}</th>
+                        <th>{{ __('Destination URL') }}</th>
                     </tr>
                 </thead>
                 <tbody>

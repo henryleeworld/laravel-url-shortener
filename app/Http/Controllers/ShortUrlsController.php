@@ -38,7 +38,7 @@ class ShortUrlsController extends Controller
         ShortUrls::create($input);
   
         return redirect('short-url/generate')
-             ->with('success', '短網址產生成功！');
+             ->with('success', __('Short URL generated successfully!'));
     }
    
     /**
