@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('short_urls', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->text('url');
             $table->string('code')->unique();
             $table->unsignedInteger('counter')->default(0);

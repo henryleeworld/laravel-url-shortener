@@ -4,15 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\ShortUrls;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class ShortUrlsController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -22,9 +19,7 @@ class ShortUrlsController extends Controller
     }
      
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
@@ -42,9 +37,7 @@ class ShortUrlsController extends Controller
     }
    
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Redirect the URL.
      */
     public function redirectUrl($code)
     {
