@@ -2,12 +2,12 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <title>{{ config('app.name') }}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
    
 <div class="container">
-    <h4 class="font-weight-bold mb-3 text-success text-center">{{ __('Short URL Generator: Do not insert illegal or dangerous links.') }}</h4>
+    <h4 class="font-weight-bold mt-3 mb-3 text-success text-center">{{ __('Short URL Generator: Do not insert illegal or dangerous links.') }}</h4>
     <div class="card">
       <div class="card-header">
         <form method="POST" action="{{ route('short-url.generate.post') }}">

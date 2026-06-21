@@ -1,4 +1,4 @@
-# Laravel 12 縮網址服務
+# Laravel 13 縮網址服務
 
 提供把冗長的網址縮短，讓原有的網址改頭換面。有些網址後面可能會夾帶參數或是中文字元等等，往往複製貼上後就會變成一長串，不但很不美觀，也不利分享或使用。另一個原因是過長的網址在 BBS 或手機裡面顯示時可能會被截斷，進而無法進入到你想要使用的網站，所以一般會透過短網址來解決這個問題。
 
@@ -26,8 +26,8 @@ $ php artisan migrate
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/C7e4Mne.png)
+![](https://i.imgur.com/vM4dqZW.png)
 > 將要縮短的網址貼上，點擊「產生」送出
 
-![](https://i.imgur.com/0padRyi.png)
+![](https://i.imgur.com/09BYFBr.png)
 > 讓原本所帶的 HTTP 參照位址能夠原封不動地帶到目的地網址去

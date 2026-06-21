@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ShortUrls;
+use Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -41,7 +42,7 @@ class ShortUrlsController extends Controller
      */
     public function redirectUrl($code)
     {
-        $url = \Cache::rememberForever("short-url.$code", function () use ($code) {
+        $url = Cache::rememberForever("short-url.$code", function () use ($code) {
             return ShortUrls::whereCode($code)->first();
         });
 
